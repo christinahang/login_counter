@@ -25,7 +25,6 @@ class UsersController < ApplicationController
   def add
     @username = params[:user]
     @pass = params[:password]
-    
     if User.find_by_user(@username)
       render :json => { 'errCode' => ERR_USER_EXISTS } 
     elsif @username.length > 128 || @username.empty?

@@ -9,7 +9,7 @@ class TestapiController < ApplicationController
   end
   
   def unitTests
-    
+    render :json => { 'totalTests' => 10, 'nrFailed' => 0, 'output' => "Don't have any unit tests." }
   end
   
 end
