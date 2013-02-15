@@ -1,4 +1,20 @@
 LoginCounter::Application.routes.draw do
+  post "/users/login"
+  post "/users/add"
+  post "/TESTAPI/resetFixture"
+  post "/TESTAPI/unitTests"
+  
+  
+  resources :users
+  resources :testapi
+  
+  namespace "testapi" do
+    resource :defaults => { :format => 'json' }
+  end
+  
+  namespace "users" do
+    resource :defaults => { :format => 'json' }
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
